@@ -21,6 +21,7 @@ export default function Hero({ lang }: { lang: Lang }) {
           <h1 className="text-4xl md:text-5xl font-extrabold text-stone-800 leading-tight mb-4">
             Los Amigos de{" "}
             <span className="text-terracotta">Los Niños</span>
+            {" "}Mulegé
           </h1>
           <p className="text-lg text-stone-600 mb-8 leading-relaxed">
             {t.subtitle}

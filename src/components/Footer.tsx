@@ -17,8 +17,7 @@ export default function Footer({ lang }: { lang: Lang }) {
                 LA
               </div>
               <div className="font-bold text-white text-sm leading-tight">
-                Los Amigos de Los Niños<br />
-                <span className="text-stone-400 font-normal text-xs">Mulegé, BCS, México</span>
+                Los Amigos de Los Niños, Mulegé
               </div>
             </div>
             <p className="text-stone-400 text-sm leading-relaxed">{t.tagline}</p>

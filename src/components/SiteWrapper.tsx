@@ -4,7 +4,6 @@ import { Lang } from "@/lib/i18n";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import About from "./About";
-import Students from "./Students";
 import Donate from "./Donate";
 import Membership from "./Membership";
 import News from "./News";
@@ -19,9 +18,8 @@ export default function SiteWrapper() {
       <Navbar lang={lang} setLang={setLang} />
       <main>
         <Hero lang={lang} />
-        <About lang={lang} />
-        <Students lang={lang} />
         <News lang={lang} />
+        <About lang={lang} />
         <Donate lang={lang} />
         <Membership lang={lang} />
         <Volunteer lang={lang} />

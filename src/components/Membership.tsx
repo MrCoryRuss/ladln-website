@@ -45,7 +45,7 @@ export default function Membership({ lang }: { lang: Lang }) {
           <p className="text-stone-600 max-w-lg mx-auto">{t.intro}</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 max-w-2xl">
           {t.tiers.map((tier) => {
             const c = tierColors[tier.color];
             return (

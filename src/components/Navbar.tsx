@@ -31,8 +31,8 @@ export default function Navbar({ lang, setLang }: Props) {
             LA
           </div>
           <div className="hidden sm:block leading-tight">
-            <div className="font-bold text-stone-800 text-sm leading-none">Los Amigos de Los Niños</div>
-            <div className="text-xs text-stone-500">Mulegé, BCS, México</div>
+            <div className="font-bold text-stone-800 text-sm leading-none">Los Amigos de Los Niños, Mulegé</div>
+            <div className="text-xs text-stone-500">Baja California Sur, México</div>
           </div>
         </Link>
 

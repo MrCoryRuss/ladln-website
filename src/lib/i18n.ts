@@ -21,7 +21,7 @@ export const translations = {
     impact: {
       heading: "Our Impact",
       stat1_num: "50+",
-      stat1_label: "Students Supported",
+      stat1_label: "Current Students Receiving Scholarships",
       stat2_num: "1976",
       stat2_label: "Founded",
       stat3_num: "501(c)(3)",
@@ -74,28 +74,10 @@ export const translations = {
         "Your membership directly funds student scholarships. Every dollar makes a difference.",
       tiers: [
         {
-          name: "Bronze",
+          name: "Annual Membership",
           amount: "$75",
-          desc: "Equivalent to 1 semester for a high school student. Includes one membership.",
+          desc: "Annual membership fee. Helps fund scholarships for students at CECyTE 01 Mulegé and technology/university programs.",
           color: "amber",
-        },
-        {
-          name: "Silver",
-          amount: "$150",
-          desc: "Equivalent to 1 year for a high school student. Includes one membership + $75 donation, or two memberships for a couple.",
-          color: "slate",
-        },
-        {
-          name: "Gold",
-          amount: "$300",
-          desc: "Equivalent to 1 year for 2 high school students. Includes one membership + $225 donation.",
-          color: "yellow",
-        },
-        {
-          name: "Diamond",
-          amount: "$600",
-          desc: "Equivalent to 1 year for a college student. Includes one membership + $525 donation.",
-          color: "sky",
         },
       ],
       chromebook: "$65 — Samsung Chromebook (reconditioned) + backpack for each first-time scholarship student.",
@@ -150,7 +132,7 @@ export const translations = {
     impact: {
       heading: "Nuestro Impacto",
       stat1_num: "50+",
-      stat1_label: "Estudiantes Apoyados",
+      stat1_label: "Becarios Actuales",
       stat2_num: "1976",
       stat2_label: "Fundación",
       stat3_num: "501(c)(3)",
@@ -203,28 +185,10 @@ export const translations = {
         "Tu membresía financia directamente las becas estudiantiles. Cada dólar hace la diferencia.",
       tiers: [
         {
-          name: "Bronce",
+          name: "Membresía Anual",
           amount: "$75",
-          desc: "Equivalente a 1 semestre para un estudiante de preparatoria. Incluye una membresía.",
+          desc: "Cuota de membresía anual. Ayuda a financiar becas para estudiantes del CECyTE 01 Mulegé y programas universitarios y tecnológicos.",
           color: "amber",
-        },
-        {
-          name: "Plata",
-          amount: "$150",
-          desc: "Equivalente a 1 año para un estudiante de preparatoria. Incluye una membresía + donación de $75, o dos membresías para una pareja.",
-          color: "slate",
-        },
-        {
-          name: "Oro",
-          amount: "$300",
-          desc: "Equivalente a 1 año para 2 estudiantes de preparatoria. Incluye una membresía + donación de $225.",
-          color: "yellow",
-        },
-        {
-          name: "Diamante",
-          amount: "$600",
-          desc: "Equivalente a 1 año para un estudiante universitario. Incluye una membresía + donación de $525.",
-          color: "sky",
         },
       ],
       chromebook: "$65 — Samsung Chromebook (reacondicionado) + mochila para cada nuevo becario.",

@@ -1,10 +1,24 @@
 "use client";
 import { Lang, translations } from "@/lib/i18n";
-import { BookOpen, Home, Laptop, Star } from "lucide-react";
+import { BookOpen, Home, Laptop, Star, Mail } from "lucide-react";
+
+// Placeholder board members — to be replaced with real data
+const boardEN = [
+  { name: "Board Members", role: "Coming Soon", email: "losamigosmulege@gmail.com" },
+];
+
+const boardES = [
+  { name: "Miembros de la Junta", role: "Próximamente", email: "losamigosmulege@gmail.com" },
+];
 
 export default function About({ lang }: { lang: Lang }) {
   const tm = translations[lang].mission;
-  const te = translations[lang].education;
+  const board = lang === "en" ? boardEN : boardES;
+  const boardHeading = lang === "en" ? "Board of Directors" : "Junta Directiva";
+  const boardSubtext =
+    lang === "en"
+      ? "Meet the dedicated volunteers who guide Los Amigos de Los Niños, Mulegé."
+      : "Conoce a los voluntarios dedicados que guían a Los Amigos de Los Niños, Mulegé.";
 
   const icons = [BookOpen, Home, Laptop, Star];
 
@@ -48,25 +62,27 @@ export default function About({ lang }: { lang: Lang }) {
           </div>
         </div>
 
-        {/* Education system */}
-        <div className="bg-stone-50 rounded-3xl p-8 md:p-12 border border-stone-100">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-stone-800 mb-3">
-            {te.heading}
+        {/* Board of Directors */}
+        <div id="board" className="bg-stone-50 rounded-3xl p-8 md:p-12 border border-stone-100">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-stone-800 mb-2">
+            {boardHeading}
           </h2>
-          <p className="text-stone-600 mb-8 leading-relaxed max-w-2xl">{te.body}</p>
-          <div className="flex flex-wrap gap-3">
-            {te.levels.map((level, i) => (
+          <p className="text-stone-600 mb-8 leading-relaxed max-w-2xl">{boardSubtext}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {board.map((member) => (
               <div
-                key={level.name}
-                className="flex items-center gap-3 bg-white border border-stone-200 rounded-xl px-4 py-3 shadow-sm"
+                key={member.name}
+                className="bg-white border border-stone-200 rounded-2xl px-5 py-4 shadow-sm flex flex-col gap-1"
               >
-                <div className="w-7 h-7 rounded-full bg-terracotta flex items-center justify-center text-white text-xs font-bold shrink-0">
-                  {i + 1}
-                </div>
-                <div>
-                  <div className="font-semibold text-stone-800 text-sm">{level.name}</div>
-                  <div className="text-xs text-stone-500">{level.desc}</div>
-                </div>
+                <div className="font-semibold text-stone-800">{member.name}</div>
+                <div className="text-sm text-terracotta font-medium">{member.role}</div>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="text-xs text-stone-500 hover:text-terracotta transition-colors flex items-center gap-1 mt-1"
+                >
+                  <Mail size={11} />
+                  {member.email}
+                </a>
               </div>
             ))}
           </div>
