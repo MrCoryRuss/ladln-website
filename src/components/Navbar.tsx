@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Lang, translations } from "@/lib/i18n";
 import LanguageToggle from "./LanguageToggle";
@@ -27,11 +28,18 @@ export default function Navbar({ lang, setLang }: Props) {
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="#" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-full bg-terracotta flex items-center justify-center text-white font-bold text-sm shrink-0">
-            LA
-          </div>
+          <Image
+            src="/logo.jpg"
+            alt="Los Amigos de Los Niños, Mulegé"
+            width={48}
+            height={48}
+            className="rounded-full shrink-0"
+            priority
+          />
           <div className="hidden sm:block leading-tight">
-            <div className="font-bold text-stone-800 text-sm leading-none">Los Amigos de Los Niños, Mulegé</div>
+            <div className="font-bold text-sm leading-none" style={{ color: "#253E80" }}>
+              Los Amigos de Los Niños, Mulegé
+            </div>
             <div className="text-xs text-stone-500">Baja California Sur, México</div>
           </div>
         </Link>
@@ -42,7 +50,7 @@ export default function Navbar({ lang, setLang }: Props) {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-stone-600 hover:text-terracotta transition-colors"
+              className="text-sm font-medium text-stone-600 hover:text-[#253E80] transition-colors"
             >
               {l.label}
             </a>
@@ -54,7 +62,10 @@ export default function Navbar({ lang, setLang }: Props) {
           <LanguageToggle lang={lang} setLang={setLang} />
           <a
             href="#donate"
-            className="hidden md:inline-flex items-center bg-terracotta hover:bg-terracotta-dark text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors shadow-sm"
+            className="hidden md:inline-flex items-center text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors shadow-sm"
+            style={{ backgroundColor: "#253E80" }}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#1a2e61")}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#253E80")}
           >
             {translations[lang].nav.donate}
           </a>
@@ -75,7 +86,8 @@ export default function Navbar({ lang, setLang }: Props) {
             <a
               key={l.href}
               href={l.href}
-              className="text-stone-700 font-medium py-1"
+              className="font-medium py-1"
+              style={{ color: "#253E80" }}
               onClick={() => setOpen(false)}
             >
               {l.label}
@@ -83,7 +95,8 @@ export default function Navbar({ lang, setLang }: Props) {
           ))}
           <a
             href="#donate"
-            className="mt-2 text-center bg-terracotta text-white font-semibold py-2 rounded-full"
+            className="mt-2 text-center text-white font-semibold py-2 rounded-full"
+            style={{ backgroundColor: "#253E80" }}
             onClick={() => setOpen(false)}
           >
             {translations[lang].nav.donate}

@@ -9,20 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        terracotta: {
-          DEFAULT: "#C1440E",
-          dark: "#A33509",
-          light: "#E05A2B",
+        // Brand colors matched from ladlnmulege.org
+        primary: {
+          DEFAULT: "#253E80",  // navy blue — links & primary actions
+          dark: "#1a2e61",
+          light: "#3a57a8",
         },
-        sand: "#F5ECD7",
-        gold: "#D4A017",
+        brand: {
+          green: "#7A9B33",    // logo green (cactus, "los", "de los")
+          red: "#F46A6A",      // logo red ("Amigos", accents)
+          purple: "#6D63C7",   // logo purple ("Niños")
+        },
+        // Keep subtle neutrals
+        sand: "#F5F5F0",
         desert: {
-          DEFAULT: "#E8D5B0",
-          light: "#F0E4C8",
+          DEFAULT: "#EEF0F5",
+          light: "#F8F9FC",
+        },
+        // Legacy alias so existing className="text-terracotta" still works
+        terracotta: {
+          DEFAULT: "#253E80",
+          dark: "#1a2e61",
+          light: "#3a57a8",
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Alegreya", "Georgia", "serif"],
       },
     },
   },

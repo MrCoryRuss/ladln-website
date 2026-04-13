@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-terracotta: #C1440E;
-  --color-terracotta-dark: #A33509;
-  --color-terracotta-light: #E05A2B;
-  --color-sand: #F5ECD7;
-  --color-gold: #D4A017;
-  --color-desert: #E8D5B0;
-  --color-desert-light: #F0E4C8;
+  /* Brand colors from ladlnmulege.org */
+  --color-primary: #253E80;
+  --color-primary-dark: #1a2e61;
+  --color-primary-light: #3a57a8;
+  --color-brand-green: #7A9B33;
+  --color-brand-red: #F46A6A;
+  --color-brand-purple: #6D63C7;
+  --color-sand: #F5F5F0;
+  --color-desert: #EEF0F5;
+  --color-desert-light: #F8F9FC;
+
+  /* Legacy aliases */
+  --color-terracotta: #253E80;
+  --color-terracotta-dark: #1a2e61;
+  --color-terracotta-light: #3a57a8;
+  --color-gold: #7A9B33;
 }
 
 html {
@@ -16,4 +26,10 @@ html {
 
 body {
   @apply antialiased;
+  font-family: 'Alegreya', Georgia, serif;
+  color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Alegreya', Georgia, serif;
 }
