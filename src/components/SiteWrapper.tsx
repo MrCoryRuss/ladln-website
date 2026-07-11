@@ -26,9 +26,8 @@ export default function SiteWrapper() {
                             <Donate lang={lang} />
                             <Membership lang={lang} />
                             <Volunteer lang={lang} />
-                    </main>main>
+                    </main>
                     <Footer lang={lang} />
-              </>>
+              </>
             );
 }
-</>
