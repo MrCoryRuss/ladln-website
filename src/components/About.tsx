@@ -31,12 +31,12 @@ const board: Member[] = [
     image: "/board/kj.png",
   },
   {
-    name: "Sally Thompson",
+    name: "Sally Thomsen",
     roleEn: "",
     roleEs: "",
     bioEn: "",
     bioEs: "",
-    image: "/board/sally-thompson.png",
+    image: "/board/sally-thomsen.png",
   },
   {
     name: "Terri Wolfe",
