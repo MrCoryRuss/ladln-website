@@ -10,6 +10,7 @@ const content = {
       "Los Amigos de Los Niños, Mulegé, provides educational scholarships and support that help students build brighter futures and strengthen the Mulegé community.",
     ctaDonate: "Donate Now",
     ctaStudents: "Student Success Stories",
+    ctaFacebook: "Follow us on Facebook",
     stats: [
       { num: "65", label: "Current Scholarships" },
       { num: "34", label: "High School Students" },
@@ -23,6 +24,7 @@ const content = {
       "Los Amigos de Los Niños, Mulegé, brinda becas educativas y apoyo que ayudan a los estudiantes a construir un futuro más brillante y a fortalecer a la comunidad de Mulegé.",
     ctaDonate: "Donar Ahora",
     ctaStudents: "Historias de Éxito",
+    ctaFacebook: "Síguenos en Facebook",
     stats: [
       { num: "65", label: "Becas Actuales" },
       { num: "34", label: "Estudiantes de Preparatoria" },
@@ -93,6 +95,15 @@ export default function Hero({ lang }: { lang: Lang }) {
                 style={{ color: "#253E80" }}
               >
                 {t.ctaStudents}
+              </a>
+              <a
+                href="https://www.facebook.com/ladlnmulege"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white font-semibold px-6 py-3 rounded-full shadow border border-stone-200 transition-all hover:shadow-md"
+                style={{ color: "#1877F2" }}
+              >
+                {t.ctaFacebook}
               </a>
             </div>
           </div>

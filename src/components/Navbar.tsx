@@ -21,6 +21,7 @@ export default function Navbar({ lang, setLang }: Props) {
     { href: "#news", label: t.news },
     { href: "#membership", label: t.membership },
     { href: "#volunteer", label: t.volunteer },
+    { href: "#leadership", label: t.leadership },
   ];
 
   return (

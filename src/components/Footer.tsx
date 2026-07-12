@@ -28,12 +28,12 @@ export default function Footer({ lang }: { lang: Lang }) {
               {t.contact}
             </div>
             <a
-              href="mailto:losamigosmulege@gmail.com"
+              href="mailto:jrovens@losamigosmulege.org"
               className="flex items-center gap-2 text-sm transition-colors hover:text-white"
               style={{ color: "#9aaac8" }}
             >
               <Mail size={14} />
-              losamigosmulege@gmail.com
+              jrovens@losamigosmulege.org
             </a>
           </div>
 

@@ -10,6 +10,7 @@ export const translations = {
       membership: "Membership",
       news: "What's New",
       volunteer: "Volunteer",
+      leadership: "Leadership",
     },
     hero: {
       tagline: "Supporting students since 1976",
@@ -37,7 +38,7 @@ export const translations = {
         "The World Health Organization, the United Nations, and nearly every expert who studies the link between education and poverty reduction agrees that education empowers individuals. It is the conduit that provides the knowledge and skills people need to escape poverty. And it is the fuel that drives local economic growth and fosters civic engagement.",
       keypoints_heading: "About Us — Some Key Points",
       keypoints: [
-        "Los Amigos de Los Niños, Mulegé has been continuously supporting students from the Mulegé area and surrounding ranches since 1976.",
+        "Los Amigos de Los Niños, Mulegé, has supported students from Mulegé and surrounding ranches since 1976, with more than 525 high school and university graduates in medicine, engineering, gastronomy, education, business administration, and law.",
         "Some ranches are in such remote locations that high school students are forced to secure, at their own expense, housing closer to the school. In addition, Mulegé High School charges every student an annual fee to attend classes.",
         "Since local incomes in the area are typically low, many families are unable to afford the cost of a high school education for their children. Accordingly, drop-out rates among high school students have been traditionally high.",
         "Our organization's scholarship program currently supports over 65 high school and university students annually, with a donations budget of nearly $40,000 USD and growing.",
@@ -261,6 +262,7 @@ export const translations = {
       membership: "Membresía",
       news: "Novedades",
       volunteer: "Voluntariado",
+      leadership: "Liderazgo",
     },
     hero: {
       tagline: "Apoyando estudiantes desde 1976",
@@ -288,7 +290,7 @@ export const translations = {
         "La Organización Mundial de la Salud, las Naciones Unidas y casi todos los expertos que estudian el vínculo entre la educación y la reducción de la pobreza coinciden en que la educación empodera a las personas. Es el conducto que proporciona el conocimiento y las habilidades que las personas necesitan para escapar de la pobreza. Y es el combustible que impulsa el crecimiento económico local y fomenta la participación cívica.",
       keypoints_heading: "Sobre Nosotros — Puntos Clave",
       keypoints: [
-        "Los Amigos de Los Niños, Mulegé ha apoyado continuamente a estudiantes del área de Mulegé y ranchos aledaños desde 1976.",
+        "Los Amigos de Los Niños, Mulegé, ha apoyado a estudiantes de Mulegé y ranchos aledaños desde 1976, con más de 525 graduados de preparatoria y universidad en medicina, ingeniería, gastronomía, educación, administración de empresas y derecho.",
         "Algunos ranchos están en ubicaciones tan remotas que los estudiantes de preparatoria deben conseguir, a su propio costo, alojamiento cerca de la escuela. Además, la preparatoria de Mulegé cobra a cada estudiante una cuota anual para asistir a clases.",
         "Dado que los ingresos locales suelen ser bajos, muchas familias no pueden costear la educación preparatoria de sus hijos. En consecuencia, las tasas de deserción entre estudiantes de preparatoria han sido tradicionalmente altas.",
         "Nuestro programa de becas actualmente apoya a más de 65 estudiantes de preparatoria y universidad al año, con un presupuesto de donaciones de casi $40,000 USD y en crecimiento.",

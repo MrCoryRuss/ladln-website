@@ -10,6 +10,7 @@ import News from "./News";
 import Donate from "./Donate";
 import Membership from "./Membership";
 import Volunteer from "./Volunteer";
+import Leadership from "./Leadership";
 import Footer from "./Footer";
 
 export default function SiteWrapper() {
@@ -26,6 +27,7 @@ export default function SiteWrapper() {
         <Donate lang={lang} />
         <Membership lang={lang} />
         <Volunteer lang={lang} />
+        <Leadership lang={lang} />
       </main>
       <Footer lang={lang} />
     </>
