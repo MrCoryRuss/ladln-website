@@ -93,7 +93,7 @@ export const translations = {
       check_address:
         "Terri Wolfe, Treasurer\nLos Amigos De Los Niños, Mulegé\nPO Box 9286\nMammoth Lakes, CA 93546",
       questions: "Questions? Contact John Rovens, Director, Resource Development:",
-      contact_email: "jrovens@losamigosmulege.org",
+      contact_email: "info@losamigosmulege.org",
       partners_note:
         "LADLN Student Scholarships of Mulegé, AC (Asociación Civil, RFC: LSS210325GC8) is our registered Mexican nonprofit. Myriad is Los Amigos de Los Niños, Mulegé, Inc.'s charitable partner in Canada.",
     },
@@ -244,7 +244,7 @@ export const translations = {
         },
       ],
       cta: "Get in Touch",
-      contact: "jrovens@losamigosmulege.org",
+      contact: "info@losamigosmulege.org",
     },
     footer: {
       tagline: "Supporting students in Mulegé, Baja California Sur since 1976.",
@@ -345,7 +345,7 @@ export const translations = {
       check_address:
         "Terri Wolfe, Treasurer\nLos Amigos De Los Niños, Mulegé\nPO Box 9286\nMammoth Lakes, CA 93546",
       questions: "¿Preguntas? Contacta a John Rovens, Director de Desarrollo de Recursos:",
-      contact_email: "jrovens@losamigosmulege.org",
+      contact_email: "info@losamigosmulege.org",
       partners_note:
         "LADLN Student Scholarships of Mulegé, AC (Asociación Civil, RFC: LSS210325GC8) es nuestra organización sin fines de lucro registrada en México. Myriad es el socio benéfico de Los Amigos de Los Niños, Mulegé, Inc. en Canadá.",
     },
@@ -497,7 +497,7 @@ export const translations = {
         },
       ],
       cta: "Contáctanos",
-      contact: "jrovens@losamigosmulege.org",
+      contact: "info@losamigosmulege.org",
     },
     footer: {
       tagline: "Apoyando estudiantes en Mulegé, Baja California Sur desde 1976.",
