@@ -1,12 +1,74 @@
 "use client";
+import Image from "next/image";
 import { Lang, translations } from "@/lib/i18n";
 import { hsStudents, gradProfiles } from "@/lib/students";
 import { Quote, PlayCircle } from "lucide-react";
 
 const GRAD_VIDEO_ID = "zOYbe2wPBOw";
 
+const highSchoolGraduateFeature = {
+  en: {
+    title: "2026 High School Graduates",
+    intro:
+      "We are immensely proud of our Los Amigos scholarship students in the CECyTE (high school) class of 2026! Their hard work, perseverance, and dedication have carried them to this milestone and we couldn’t be prouder to celebrate them.",
+    body:
+      "Each of these students represents hope for a brighter future in Mulegé and beyond. They’ve grown into thoughtful, capable young people ready to take on their next adventure, and we are honored to have been part of their journey through the scholarship program.",
+    closing:
+      "Felicidades! Congratulations, graduates! Thanks to our members and donors for your continued support.",
+  },
+  es: {
+    title: "Graduados de Preparatoria 2026",
+    intro:
+      "¡Estamos inmensamente orgullosos de nuestros becarios de Los Amigos en la generación 2026 de CECyTE (preparatoria)! Su trabajo duro, perseverancia y dedicación los han llevado a este logro, y no podríamos estar más orgullosos de celebrarlos.",
+    body:
+      "Cada uno de estos estudiantes representa esperanza para un futuro más brillante en Mulegé y más allá. Se han convertido en jóvenes reflexivos y capaces, listos para emprender su próxima aventura, y nos sentimos honrados de haber sido parte de su camino a través del programa de becas.",
+    closing:
+      "¡Felicidades! ¡Congratulations, graduates! Gracias a nuestros miembros y donantes por su continuo apoyo.",
+  },
+} as const;
+
+const highSchoolGraduates2026 = [
+  {
+    name: "Antonio Alexander Gutiérrez Leyva",
+    image: "/students/2026-high-school-graduates/antonio-alexander-gutierrez-leyva.png",
+  },
+  {
+    name: "Ismael Carrizosa Rosales",
+    image: "/students/2026-high-school-graduates/ismael-carrizosa-rosales.png",
+  },
+  {
+    name: "Axel Emir Osuna Peralta",
+    image: "/students/2026-high-school-graduates/axel-emir-osuna-peralta.png",
+  },
+  {
+    name: "Natalia León Castro",
+    image: "/students/2026-high-school-graduates/natalia-leon-castro.png",
+  },
+  {
+    name: "Yosef Kalel Martínez Mateo",
+    image: "/students/2026-high-school-graduates/yosef-kalel-martinez-mateo.png",
+  },
+  {
+    name: "Guillermo Hernández Osuna",
+    image: "/students/2026-high-school-graduates/guillermo-hernandez-osuna.png",
+  },
+  {
+    name: "Santiago Meza Corral",
+    image: "/students/2026-high-school-graduates/santiago-meza-corral.png",
+  },
+  {
+    name: "Javier Ernesto Sahagún Gutiérrez",
+    image: "/students/2026-high-school-graduates/javier-ernesto-sahagun-gutierrez.png",
+  },
+  {
+    name: "Jovanna Ariadna García Meza",
+    image: "/students/2026-high-school-graduates/jovanna-ariadna-garcia-meza.png",
+  },
+];
+
 export default function Students({ lang }: { lang: Lang }) {
   const t = translations[lang].students;
+  const feature = highSchoolGraduateFeature[lang];
 
   return (
     <section id="students" className="py-20 bg-gradient-to-b from-stone-50 to-white">
@@ -29,6 +91,40 @@ export default function Students({ lang }: { lang: Lang }) {
           <span className="w-1 h-6 rounded-full bg-terracotta inline-block" />
           {t.hs_heading}
         </h3>
+
+        {/* Featured 2026 high school graduates story from the old website */}
+        <article className="bg-white border border-stone-200 rounded-3xl p-6 md:p-8 shadow-sm mb-10">
+          <div className="max-w-3xl mb-6">
+            <div className="text-terracotta font-semibold text-sm uppercase tracking-wider mb-2">
+              {lang === "en" ? "Featured Story" : "Historia Destacada"}
+            </div>
+            <h4 className="text-2xl font-extrabold text-stone-800 mb-3">{feature.title}</h4>
+            <p className="text-stone-600 leading-relaxed mb-4">{feature.intro}</p>
+            <p className="text-stone-600 leading-relaxed mb-4">{feature.body}</p>
+            <p className="text-stone-600 leading-relaxed font-medium">{feature.closing}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {highSchoolGraduates2026.map((student) => (
+              <div
+                key={student.name}
+                className="rounded-2xl overflow-hidden border border-stone-200 bg-stone-50"
+              >
+                <Image
+                  src={student.image}
+                  alt={student.name}
+                  width={640}
+                  height={800}
+                  className="w-full aspect-[4/5] object-cover bg-stone-100"
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                />
+                <div className="p-3 text-sm font-semibold text-stone-700 text-center">
+                  {student.name}
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
 
         {(["seniors", "juniors", "sophomores"] as const).map((group) => (
           <div key={group} className="mb-8">
