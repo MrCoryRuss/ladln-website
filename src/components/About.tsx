@@ -13,6 +13,42 @@ type Member = {
 
 const board: Member[] = [
   {
+    name: "John Rovens",
+    roleEn: "Director of Resource Development",
+    roleEs: "Director de Desarrollo de Recursos",
+    bioEn:
+      "John leads donor development, events, volunteer engagement, and membership growth for Los Amigos.",
+    bioEs:
+      "John dirige el desarrollo de donantes, eventos, voluntariado y crecimiento de membresia para Los Amigos.",
+    image: "/board/john-rovens.png",
+  },
+  {
+    name: "KJ",
+    roleEn: "",
+    roleEs: "",
+    bioEn: "",
+    bioEs: "",
+    image: "/board/kj.png",
+  },
+  {
+    name: "Sally Thompson",
+    roleEn: "",
+    roleEs: "",
+    bioEn: "",
+    bioEs: "",
+    image: "/board/sally-thompson.png",
+  },
+  {
+    name: "Terri Wolfe",
+    roleEn: "Treasurer",
+    roleEs: "Tesorera",
+    bioEn:
+      "Terri oversees finance, compliance, reporting, and stewardship with deep nonprofit and CPA experience.",
+    bioEs:
+      "Terri supervisa finanzas, cumplimiento, reportes y administracion con amplia experiencia como CPA y en organizaciones sin fines de lucro.",
+    image: "/board/terri-wolfe.png",
+  },
+  {
     name: "Cory Russell",
     roleEn: "Chief Technology Officer",
     roleEs: "Director de Tecnologia",
@@ -31,42 +67,6 @@ const board: Member[] = [
     bioEs:
       "Tracy aporta una fuerte conviccion en el aprendizaje continuo y ayuda a guiar a la junta con liderazgo voluntario.",
     image: "/board/tracy-russell.jpg",
-  },
-  {
-    name: "Terri Wolfe",
-    roleEn: "Treasurer",
-    roleEs: "Tesorera",
-    bioEn:
-      "Terri oversees finance, compliance, reporting, and stewardship with deep nonprofit and CPA experience.",
-    bioEs:
-      "Terri supervisa finanzas, cumplimiento, reportes y administracion con amplia experiencia como CPA y en organizaciones sin fines de lucro.",
-    image: "/board/terri-wolfe.png",
-  },
-  {
-    name: "John Rovens",
-    roleEn: "Director of Resource Development",
-    roleEs: "Director de Desarrollo de Recursos",
-    bioEn:
-      "John leads donor development, events, volunteer engagement, and membership growth for Los Amigos.",
-    bioEs:
-      "John dirige el desarrollo de donantes, eventos, voluntariado y crecimiento de membresia para Los Amigos.",
-    image: "/board/john-rovens.png",
-  },
-  {
-    name: "Sally Thompson",
-    roleEn: "",
-    roleEs: "",
-    bioEn: "",
-    bioEs: "",
-    image: "/board/sally-thompson.png",
-  },
-  {
-    name: "KJ",
-    roleEn: "",
-    roleEs: "",
-    bioEn: "",
-    bioEs: "",
-    image: "/board/kj.png",
   },
 ];
 
