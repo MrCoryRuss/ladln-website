@@ -103,8 +103,10 @@ export const translations = {
       how_heading: "How Your Membership Supports Education",
       how_body1:
         "Our high school student scholarships cover the entire three-year high school experience. The annual cost of each scholarship is approximately $150 USD per year. Supporting each of these deserving students — all of whom are carefully selected for their potential, financial need, and academic standing — is rewarding for both recipient and donor.",
+      how_link1: "See our CECyTE student success stories →",
       how_body2:
         "Our university students are granted $3,600 scholarships that support up to 4.5 years of university or technical school education. This translates to approximately $800 per year to fund the doctors, lawyers, municipal leaders, engineers, architects, teachers, and entrepreneurs who will serve and enhance the Mulegé community now and into the future.",
+      how_link2: "See our university student success stories →",
       how_body3:
         "Every scholarship student must maintain at least a B average and provide regular academic updates in order to qualify for and retain a Los Amigos scholarship.",
       tiers: [
@@ -352,8 +354,10 @@ export const translations = {
       how_heading: "Cómo Tu Membresía Apoya la Educación",
       how_body1:
         "Nuestras becas de preparatoria cubren los tres años completos de la preparatoria. El costo anual de cada beca es de aproximadamente $150 USD por año. Apoyar a cada uno de estos estudiantes — todos cuidadosamente seleccionados por su potencial, necesidad económica y desempeño académico — es gratificante tanto para el becario como para el donante.",
+      how_link1: "Conoce las historias de éxito de nuestros estudiantes de CECyTE →",
       how_body2:
         "Nuestros estudiantes universitarios reciben becas de $3,600 que apoyan hasta 4.5 años de educación universitaria o técnica. Esto se traduce en aproximadamente $800 por año para formar a los médicos, abogados, líderes municipales, ingenieros, arquitectos, maestros y emprendedores que servirán a la comunidad de Mulegé ahora y en el futuro.",
+      how_link2: "Conoce las historias de éxito de nuestros estudiantes universitarios →",
       how_body3:
         "Cada becario debe mantener un promedio mínimo de B y proporcionar actualizaciones académicas regulares para calificar y conservar una beca de Los Amigos.",
       tiers: [

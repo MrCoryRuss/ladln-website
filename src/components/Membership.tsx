@@ -52,7 +52,19 @@ export default function Membership({ lang }: { lang: Lang }) {
         <div className="bg-stone-50 rounded-2xl p-6 md:p-8 border border-stone-100 mb-12 space-y-4">
           <h3 className="text-xl font-bold text-stone-800">{t.how_heading}</h3>
           <p className="text-stone-600 text-sm leading-relaxed">{t.how_body1}</p>
+          <a
+            href="#success-highschool"
+            className="inline-block text-terracotta text-sm font-semibold hover:underline"
+          >
+            {t.how_link1}
+          </a>
           <p className="text-stone-600 text-sm leading-relaxed">{t.how_body2}</p>
+          <a
+            href="#success-university"
+            className="inline-block text-terracotta text-sm font-semibold hover:underline"
+          >
+            {t.how_link2}
+          </a>
           <p className="text-stone-600 text-sm leading-relaxed font-medium">{t.how_body3}</p>
         </div>
 

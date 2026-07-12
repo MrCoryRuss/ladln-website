@@ -22,7 +22,10 @@ export default function Students({ lang }: { lang: Lang }) {
         </div>
 
         {/* 1. CECyTE High School Success Stories */}
-        <h3 className="text-xl font-bold text-stone-700 mb-6 flex items-center gap-2">
+        <h3
+          id="success-highschool"
+          className="text-xl font-bold text-stone-700 mb-6 flex items-center gap-2 scroll-mt-24"
+        >
           <span className="w-1 h-6 rounded-full bg-terracotta inline-block" />
           {t.hs_heading}
         </h3>
@@ -46,7 +49,10 @@ export default function Students({ lang }: { lang: Lang }) {
         ))}
 
         {/* 2. University Success Stories */}
-        <h3 className="text-xl font-bold text-stone-700 mt-14 mb-6 flex items-center gap-2">
+        <h3
+          id="success-university"
+          className="text-xl font-bold text-stone-700 mt-14 mb-6 flex items-center gap-2 scroll-mt-24"
+        >
           <span className="w-1 h-6 rounded-full bg-sky-600 inline-block" />
           {t.univ_heading}
         </h3>
