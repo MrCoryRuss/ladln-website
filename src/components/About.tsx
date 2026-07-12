@@ -43,14 +43,14 @@ const board: Member[] = [
     image: "/board/terri-wolfe.png",
   },
   {
-    name: "John Rovers",
+    name: "John Rovens",
     roleEn: "Director of Resource Development",
     roleEs: "Director de Desarrollo de Recursos",
     bioEn:
       "John leads donor development, events, volunteer engagement, and membership growth for Los Amigos.",
     bioEs:
       "John dirige el desarrollo de donantes, eventos, voluntariado y crecimiento de membresia para Los Amigos.",
-    image: "/board/john-rovers.png",
+    image: "/board/john-rovens.png",
   },
   {
     name: "Sally Thompson",

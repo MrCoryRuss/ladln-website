@@ -91,7 +91,7 @@ export const translations = {
       check_name: "LOS AMIGOS DE LOS NINOS, Mulegé, Inc.",
       check_address:
         "Terri Wolfe, Treasurer\nLos Amigos De Los Niños, Mulegé\nPO Box 9286\nMammoth Lakes, CA 93546",
-      questions: "Questions? Contact John Rovers, Director, Resource Development:",
+      questions: "Questions? Contact John Rovens, Director, Resource Development:",
       contact_email: "jrovens@losamigosmulege.org",
       partners_note:
         "LADLN Student Scholarships of Mulegé, AC (Asociación Civil, RFC: LSS210325GC8) is our registered Mexican nonprofit. Myriad is Los Amigos de Los Niños, Mulegé, Inc.'s charitable partner in Canada.",
@@ -340,7 +340,7 @@ export const translations = {
       check_name: "LOS AMIGOS DE LOS NINOS, Mulegé, Inc.",
       check_address:
         "Terri Wolfe, Treasurer\nLos Amigos De Los Niños, Mulegé\nPO Box 9286\nMammoth Lakes, CA 93546",
-      questions: "¿Preguntas? Contacta a John Rovers, Director de Desarrollo de Recursos:",
+      questions: "¿Preguntas? Contacta a John Rovens, Director de Desarrollo de Recursos:",
       contact_email: "jrovens@losamigosmulege.org",
       partners_note:
         "LADLN Student Scholarships of Mulegé, AC (Asociación Civil, RFC: LSS210325GC8) es nuestra organización sin fines de lucro registrada en México. Myriad es el socio benéfico de Los Amigos de Los Niños, Mulegé, Inc. en Canadá.",
