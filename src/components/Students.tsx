@@ -1,7 +1,9 @@
 "use client";
 import { Lang, translations } from "@/lib/i18n";
 import { hsStudents, gradProfiles } from "@/lib/students";
-import { Quote } from "lucide-react";
+import { Quote, PlayCircle } from "lucide-react";
+
+const GRAD_VIDEO_ID = "zOYbe2wPBOw";
 
 export default function Students({ lang }: { lang: Lang }) {
   const t = translations[lang].students;
@@ -11,7 +13,7 @@ export default function Students({ lang }: { lang: Lang }) {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <div className="text-terracotta font-semibold text-sm uppercase tracking-wider mb-2">
-            {lang === "en" ? "Class of 2025–2026" : "Generación 2025–2026"}
+            {lang === "en" ? "Class of 2025-2026" : "Generación 2025-2026"}
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-stone-800 mb-3">
             {t.heading}
@@ -19,7 +21,7 @@ export default function Students({ lang }: { lang: Lang }) {
           <p className="text-stone-600 max-w-xl mx-auto">{t.intro}</p>
         </div>
 
-        {/* High school students */}
+        {/* 1. CECyTE High School Success Stories */}
         <h3 className="text-xl font-bold text-stone-700 mb-6 flex items-center gap-2">
           <span className="w-1 h-6 rounded-full bg-terracotta inline-block" />
           {t.hs_heading}
@@ -43,11 +45,42 @@ export default function Students({ lang }: { lang: Lang }) {
           </div>
         ))}
 
-        {/* Graduate profiles */}
+        {/* 2. University Success Stories */}
+        <h3 className="text-xl font-bold text-stone-700 mt-14 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 rounded-full bg-sky-600 inline-block" />
+          {t.univ_heading}
+        </h3>
+        <div className="bg-white border border-dashed border-stone-300 rounded-2xl p-8 text-center text-stone-500 text-sm mb-4">
+          {t.univ_coming}
+        </div>
+
+        {/* 3. Graduates' Success Stories */}
         <h3 className="text-xl font-bold text-stone-700 mt-14 mb-6 flex items-center gap-2">
           <span className="w-1 h-6 rounded-full bg-gold inline-block" />
           {t.grad_heading}
         </h3>
+
+        {/* Featured graduate video */}
+        <div className="mb-8">
+          <div className="relative rounded-2xl overflow-hidden shadow-md border border-stone-200 bg-black max-w-3xl">
+            <div className="aspect-video">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${GRAD_VIDEO_ID}`}
+                title={t.grad_heading}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="flex items-center gap-1.5 mt-2 text-xs text-stone-500">
+            <PlayCircle size={13} className="text-terracotta" />
+            {lang === "en"
+              ? "Watch one of our graduates share their story"
+              : "Mira a uno de nuestros graduados compartir su historia"}
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {gradProfiles.map((g) => (
