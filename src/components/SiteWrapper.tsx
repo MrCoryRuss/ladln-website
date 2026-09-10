@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import About from "./About";
 import Students from "./Students";
+import FacebookFeed from "./FacebookFeed";
 import News from "./News";
 import Donate from "./Donate";
 import Membership from "./Membership";
@@ -23,6 +24,7 @@ export default function SiteWrapper() {
         <Hero lang={lang} />
         <About lang={lang} />
         <Students lang={lang} />
+        <FacebookFeed lang={lang} />
         <News lang={lang} />
         <Donate lang={lang} />
         <Membership lang={lang} />

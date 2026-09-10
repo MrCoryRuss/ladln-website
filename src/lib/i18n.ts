@@ -202,6 +202,12 @@ export const translations = {
         },
       ],
     },
+    facebook: {
+      heading: "See Our Latest on Facebook",
+      intro:
+        "Browse recent posts, photos, and student news straight from our Facebook page — no account needed.",
+      cta: "Open Facebook Page",
+    },
     students: {
       heading: "Scholarship Students' Success Stories",
       intro:
@@ -454,6 +460,12 @@ export const translations = {
           body: "Por primera vez, nos asociamos con la Asociación de Padres de CECyTE para crear una nueva área de estudio y recreación que brinda a los estudiantes un lugar seguro y saludable, protegido del calor extremo y del posible daño a la piel por la exposición prolongada al sol. Esta gran área sombreada con múltiples mesas de picnic da a los estudiantes, por primera vez, un lugar para estudiar, relajarse, recrearse y comer cómodamente. La inversión de $7,000 USD en materiales y suministros se compartió equitativamente entre las organizaciones asociadas, con la mano de obra proporcionada por padres, estudiantes y el personal de CECyTE. Los materiales se adquirieron de negocios de Mulegé que apoyan a la comunidad y la prosperidad de sus ciudadanos.",
         },
       ],
+    },
+    facebook: {
+      heading: "Mira Lo Último en Facebook",
+      intro:
+        "Explora publicaciones recientes, fotos y noticias de estudiantes directamente desde nuestra página de Facebook — sin necesidad de cuenta.",
+      cta: "Abrir Página de Facebook",
     },
     students: {
       heading: "Historias de Éxito de Nuestros Becarios",
