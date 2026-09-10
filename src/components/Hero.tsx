@@ -81,20 +81,13 @@ export default function Hero({ lang }: { lang: Lang }) {
               {t.subtitle}
             </p>
 
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start items-center">
               <a
                 href="#donate"
-                className="font-bold px-6 py-3 rounded-full shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5 text-white"
-                style={{ backgroundColor: "#253E80" }}
+                className="font-extrabold text-lg px-8 py-4 rounded-full shadow-lg ring-4 ring-[#F46A6A]/40 transition-all hover:shadow-xl hover:-translate-y-0.5 text-white"
+                style={{ backgroundColor: "#F46A6A" }}
               >
                 {t.ctaDonate}
-              </a>
-              <a
-                href="#students"
-                className="bg-white font-semibold px-6 py-3 rounded-full shadow border border-stone-200 transition-all hover:shadow-md"
-                style={{ color: "#253E80" }}
-              >
-                {t.ctaStudents}
               </a>
               <a
                 href="https://www.facebook.com/ladlnmulege"

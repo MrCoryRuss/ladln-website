@@ -52,7 +52,8 @@ export default function Donate({ lang }: { lang: Lang }) {
             href={ZEFFY_DONATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-terracotta font-extrabold text-lg px-10 py-4 rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-stone-100"
+            className="inline-block text-white font-extrabold text-lg px-10 py-4 rounded-full shadow-lg ring-4 ring-[#F46A6A]/40 transition-all hover:shadow-xl hover:-translate-y-0.5"
+            style={{ backgroundColor: "#F46A6A" }}
           >
             {t.donate_now}
           </a>
