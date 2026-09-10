@@ -19,7 +19,6 @@ export default function Navbar({ lang, setLang }: Props) {
     { href: "#about", label: t.about },
     { href: "#students", label: t.students },
     { href: "#facebook", label: t.facebook },
-    { href: "#donate", label: t.donate },
   ];
 
   return (
@@ -58,6 +57,13 @@ export default function Navbar({ lang, setLang }: Props) {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
+          <a
+            href="#donate"
+            className="hidden md:inline-flex items-center text-white text-sm font-bold px-4 py-2 rounded-full shadow-sm transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#F46A6A" }}
+          >
+            {t.donate}
+          </a>
           <LanguageToggle lang={lang} setLang={setLang} />
           <button
             className="md:hidden text-stone-600"
@@ -83,6 +89,14 @@ export default function Navbar({ lang, setLang }: Props) {
               {l.label}
             </a>
           ))}
+          <a
+            href="#donate"
+            className="mt-1 text-center text-white font-bold py-2 rounded-full"
+            style={{ backgroundColor: "#F46A6A" }}
+            onClick={() => setOpen(false)}
+          >
+            {t.donate}
+          </a>
         </div>
       )}
     </nav>

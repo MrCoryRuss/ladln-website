@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Lang, translations } from "@/lib/i18n";
 import { ExternalLink, Mail } from "lucide-react";
 
@@ -10,18 +9,7 @@ export default function Footer({ lang }: { lang: Lang }) {
   return (
     <footer className="py-12" style={{ backgroundColor: "#1a2e61", color: "#c8d3ea" }}>
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <Image src="/logo.jpg" alt="LADLN Logo" width={40} height={40} className="rounded-full shrink-0" />
-              <div className="font-bold text-white text-sm leading-tight">
-                Los Amigos de Los Niños, Mulegé
-              </div>
-            </div>
-            <p className="text-sm leading-relaxed" style={{ color: "#9aaac8" }}>{t.tagline}</p>
-          </div>
-
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
           {/* Contact */}
           <div>
             <div className="font-semibold text-white text-sm uppercase tracking-wider mb-3">
