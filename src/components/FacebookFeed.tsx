@@ -13,23 +13,26 @@ export default function FacebookFeed({ lang }: { lang: Lang }) {
   const t = translations[lang].facebook;
 
   return (
-    <section id="facebook" className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-8">
-          <div className="text-terracotta font-semibold text-sm uppercase tracking-wider mb-2">
-            {lang === "en" ? "Live from Mulegé" : "En Vivo desde Mulegé"}
-          </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-stone-800 mb-3">
-            {t.heading}
-          </h2>
-          <p className="text-stone-600 max-w-xl mx-auto">{t.intro}</p>
+    <section id="facebook" className="py-20 bg-stone-50">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-terracotta mb-3">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-terracotta opacity-60" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-terracotta" />
+          </span>
+          {lang === "en" ? "Live from Mulegé" : "En Vivo desde Mulegé"}
         </div>
 
-        <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-stone-50">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-stone-800 mb-2">
+          {t.heading}
+        </h2>
+        <p className="text-stone-600 max-w-xl mx-auto mb-8">{t.intro}</p>
+
+        <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-2xl mx-auto">
           <iframe
             src={PLUGIN_URL}
             title="Los Amigos de Los Niños Facebook page"
-            className="w-full"
+            className="w-full block"
             style={{ height: 500, border: "none", overflow: "hidden" }}
             scrolling="no"
             frameBorder="0"
@@ -38,7 +41,7 @@ export default function FacebookFeed({ lang }: { lang: Lang }) {
           />
         </div>
 
-        <div className="text-center mt-6">
+        <div className="mt-6">
           <a
             href={FB_PAGE}
             target="_blank"
