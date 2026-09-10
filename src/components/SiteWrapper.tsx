@@ -15,6 +15,16 @@ export default function SiteWrapper() {
 
   return (
     <>
+      <div
+        className="w-full text-center py-3 px-4"
+        style={{ backgroundColor: "#F6C945", color: "#1a2e61" }}
+      >
+        <span className="font-extrabold uppercase tracking-wider text-sm md:text-lg">
+          {lang === "en"
+            ? "🎉 Celebrating our 50th year"
+            : "🎉 Celebrando nuestro 50.º aniversario"}
+        </span>
+      </div>
       <Navbar lang={lang} setLang={setLang} />
       <main>
         <Hero lang={lang} />
