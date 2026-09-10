@@ -24,8 +24,8 @@ export default function SiteWrapper() {
         <Hero lang={lang} />
         <About lang={lang} />
         <Students lang={lang} />
-        <FacebookFeed lang={lang} />
         <News lang={lang} />
+        <FacebookFeed lang={lang} />
         <Donate lang={lang} />
         <Membership lang={lang} />
         <Volunteer lang={lang} />

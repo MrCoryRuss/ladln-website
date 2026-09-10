@@ -19,6 +19,7 @@ export default function Navbar({ lang, setLang }: Props) {
     { href: "#about", label: t.about },
     { href: "#students", label: t.students },
     { href: "#news", label: t.news },
+    { href: "#facebook", label: t.facebook },
     { href: "#membership", label: t.membership },
     { href: "#volunteer", label: t.volunteer },
     { href: "#leadership", label: t.leadership },
