@@ -7,11 +7,8 @@ import Hero from "./Hero";
 import About from "./About";
 import Students from "./Students";
 import FacebookFeed from "./FacebookFeed";
-import News from "./News";
 import Donate from "./Donate";
 import Membership from "./Membership";
-import Volunteer from "./Volunteer";
-import Leadership from "./Leadership";
 import Footer from "./Footer";
 
 export default function SiteWrapper() {
@@ -24,12 +21,9 @@ export default function SiteWrapper() {
         <Hero lang={lang} />
         <About lang={lang} />
         <Students lang={lang} />
-        <News lang={lang} />
         <FacebookFeed lang={lang} />
         <Donate lang={lang} />
         <Membership lang={lang} />
-        <Volunteer lang={lang} />
-        <Leadership lang={lang} />
       </main>
       <Footer lang={lang} />
     </>
