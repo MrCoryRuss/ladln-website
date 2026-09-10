@@ -3,11 +3,8 @@
 import { Lang, translations } from "@/lib/i18n";
 
 const FB_PAGE = "https://www.facebook.com/ladlnmulege";
-const PLUGIN_URL =
-  "https://www.facebook.com/plugins/page.php?href=" +
-  encodeURIComponent(FB_PAGE) +
-  "&tabs=timeline&width=340&height=650&small_header=false" +
-  "&adapt_container_width=true&hide_cover=false&show_facepile=true";
+const FEED_URL =
+  "https://widgets.sociablekit.com/facebook-page-posts/iframe/25712640";
 
 export default function FacebookFeed({ lang }: { lang: Lang }) {
   const t = translations[lang].facebook;
@@ -30,13 +27,11 @@ export default function FacebookFeed({ lang }: { lang: Lang }) {
 
         <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-4xl mx-auto">
           <iframe
-            src={PLUGIN_URL}
+            src={FEED_URL}
             title="Los Amigos de Los Niños Facebook page"
             className="w-full block"
-            style={{ height: 650, border: "none", overflow: "hidden" }}
-            scrolling="no"
+            style={{ width: "100%", height: 1000, border: "none" }}
             frameBorder="0"
-            allow="encrypted-media"
             loading="lazy"
           />
         </div>
