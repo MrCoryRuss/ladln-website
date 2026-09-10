@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Lang, translations } from "@/lib/i18n";
-import { hsStudents, gradProfiles } from "@/lib/students";
+import { gradProfiles } from "@/lib/students";
 import { Quote, PlayCircle } from "lucide-react";
 
 const GRAD_VIDEO_ID = "zOYbe2wPBOw";
@@ -126,37 +126,7 @@ export default function Students({ lang }: { lang: Lang }) {
           </div>
         </article>
 
-        {(["seniors", "juniors", "sophomores"] as const).map((group) => (
-          <div key={group} className="mb-8">
-            <div className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-3">
-              {t[group]}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {hsStudents[group].map((name) => (
-                <div
-                  key={name}
-                  className="bg-white border border-stone-200 rounded-full px-4 py-2 text-sm text-stone-700 font-medium shadow-sm hover:border-terracotta hover:text-terracotta transition-colors"
-                >
-                  {name}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-
-        {/* 2. University Success Stories */}
-        <h3
-          id="success-university"
-          className="text-xl font-bold text-stone-700 mt-14 mb-6 flex items-center gap-2 scroll-mt-24"
-        >
-          <span className="w-1 h-6 rounded-full bg-sky-600 inline-block" />
-          {t.univ_heading}
-        </h3>
-        <div className="bg-white border border-dashed border-stone-300 rounded-2xl p-8 text-center text-stone-500 text-sm mb-4">
-          {t.univ_coming}
-        </div>
-
-        {/* 3. Graduates' Success Stories */}
+        {/* 2. Graduates' Success Stories */}
         <h3 className="text-xl font-bold text-stone-700 mt-14 mb-6 flex items-center gap-2">
           <span className="w-1 h-6 rounded-full bg-gold inline-block" />
           {t.grad_heading}

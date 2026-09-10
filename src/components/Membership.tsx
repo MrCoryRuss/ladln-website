@@ -2,8 +2,8 @@
 import { Lang, translations } from "@/lib/i18n";
 import { CheckCircle } from "lucide-react";
 
-const ZEFFY_MEMBERSHIP_URL =
-  "https://www.zeffy.com/en-US/ticketing/62867cd2-9ea8-43e3-9fd0-e5ca734151f8";
+const ZEFFY_DONATION_URL =
+  "https://www.zeffy.com/en-US/donation-form/e9d1770e-2cc7-46f7-adaa-8f75075e4633";
 
 const tierColors: Record<string, { bg: string; border: string; badge: string; text: string }> = {
   amber: {
@@ -48,26 +48,6 @@ export default function Membership({ lang }: { lang: Lang }) {
           <p className="text-stone-600 max-w-2xl mx-auto">{t.intro}</p>
         </div>
 
-        {/* How membership supports education */}
-        <div className="bg-stone-50 rounded-2xl p-6 md:p-8 border border-stone-100 mb-12 space-y-4">
-          <h3 className="text-xl font-bold text-stone-800">{t.how_heading}</h3>
-          <p className="text-stone-600 text-sm leading-relaxed">{t.how_body1}</p>
-          <a
-            href="#success-highschool"
-            className="inline-block text-terracotta text-sm font-semibold hover:underline"
-          >
-            {t.how_link1}
-          </a>
-          <p className="text-stone-600 text-sm leading-relaxed">{t.how_body2}</p>
-          <a
-            href="#success-university"
-            className="inline-block text-terracotta text-sm font-semibold hover:underline"
-          >
-            {t.how_link2}
-          </a>
-          <p className="text-stone-600 text-sm leading-relaxed font-medium">{t.how_body3}</p>
-        </div>
-
         {/* Membership tiers */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
           {t.tiers.map((tier, i) => {
@@ -98,20 +78,14 @@ export default function Membership({ lang }: { lang: Lang }) {
 
         <p className="text-center text-xs text-stone-500 mb-12">{t.renew_note}</p>
 
-        {/* Non-member donors */}
-        <div className="bg-stone-50 rounded-2xl p-6 md:p-8 border border-stone-100 mb-10">
-          <h3 className="text-lg font-bold text-stone-800 mb-3">{t.non_member_heading}</h3>
-          <p className="text-stone-600 text-sm leading-relaxed">{t.non_member}</p>
-        </div>
-
         <div className="text-center">
           <a
-            href={ZEFFY_MEMBERSHIP_URL}
+            href={ZEFFY_DONATION_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-terracotta hover:bg-terracotta-dark text-white font-bold px-8 py-3 rounded-full shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5"
           >
-            {t.cta}
+            {lang === "en" ? "Donate" : "Donar"}
           </a>
         </div>
       </div>
