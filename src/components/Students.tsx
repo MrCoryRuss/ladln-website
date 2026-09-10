@@ -93,22 +93,21 @@ export default function Students({ lang }: { lang: Lang }) {
         </h3>
 
         {/* Featured 2026 high school graduates story from the old website */}
-        <article className="bg-white border border-stone-200 rounded-3xl p-6 md:p-8 shadow-sm mb-10">
-          <div className="max-w-3xl mb-6">
+        <article className="bg-white border border-stone-200 rounded-3xl p-5 md:p-6 shadow-sm mb-8">
+          <div className="max-w-3xl mb-5">
             <div className="text-terracotta font-semibold text-sm uppercase tracking-wider mb-2">
               {lang === "en" ? "Featured Story" : "Historia Destacada"}
             </div>
-            <h4 className="text-2xl font-extrabold text-stone-800 mb-3">{feature.title}</h4>
-            <p className="text-stone-600 leading-relaxed mb-4">{feature.intro}</p>
-            <p className="text-stone-600 leading-relaxed mb-4">{feature.body}</p>
+            <h4 className="text-xl font-extrabold text-stone-800 mb-2">{feature.title}</h4>
+            <p className="text-stone-600 leading-relaxed mb-2">{feature.intro}</p>
             <p className="text-stone-600 leading-relaxed font-medium">{feature.closing}</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-3">
             {highSchoolGraduates2026.map((student) => (
               <div
                 key={student.name}
-                className="rounded-2xl overflow-hidden border border-stone-200 bg-stone-50"
+                className="rounded-xl overflow-hidden border border-stone-200 bg-stone-50"
               >
                 <Image
                   src={student.image}
@@ -116,9 +115,9 @@ export default function Students({ lang }: { lang: Lang }) {
                   width={640}
                   height={800}
                   className="w-full aspect-[4/5] object-cover bg-stone-100"
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                  sizes="(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 33vw"
                 />
-                <div className="p-3 text-sm font-semibold text-stone-700 text-center">
+                <div className="p-2 text-xs font-semibold text-stone-700 text-center leading-tight">
                   {student.name}
                 </div>
               </div>
