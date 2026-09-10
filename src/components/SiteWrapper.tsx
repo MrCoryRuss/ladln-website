@@ -8,7 +8,6 @@ import About from "./About";
 import Students from "./Students";
 import FacebookFeed from "./FacebookFeed";
 import Donate from "./Donate";
-import Membership from "./Membership";
 import Footer from "./Footer";
 
 export default function SiteWrapper() {
@@ -23,7 +22,6 @@ export default function SiteWrapper() {
         <About lang={lang} />
         <Students lang={lang} />
         <Donate lang={lang} />
-        <Membership lang={lang} />
       </main>
       <Footer lang={lang} />
     </>
