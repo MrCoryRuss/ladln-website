@@ -6,7 +6,7 @@ const FB_PAGE = "https://www.facebook.com/ladlnmulege";
 const PLUGIN_URL =
   "https://www.facebook.com/plugins/page.php?href=" +
   encodeURIComponent(FB_PAGE) +
-  "&tabs=timeline&width=340&height=500&small_header=false" +
+  "&tabs=timeline&width=340&height=650&small_header=false" +
   "&adapt_container_width=true&hide_cover=false&show_facepile=true";
 
 export default function FacebookFeed({ lang }: { lang: Lang }) {
@@ -14,7 +14,7 @@ export default function FacebookFeed({ lang }: { lang: Lang }) {
 
   return (
     <section id="facebook" className="py-20 bg-stone-50">
-      <div className="max-w-4xl mx-auto px-4 text-center">
+      <div className="max-w-5xl mx-auto px-4 text-center">
         <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-terracotta mb-3">
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-terracotta opacity-60" />
@@ -28,12 +28,12 @@ export default function FacebookFeed({ lang }: { lang: Lang }) {
         </h2>
         <p className="text-stone-600 max-w-xl mx-auto mb-8">{t.intro}</p>
 
-        <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-2xl mx-auto">
+        <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-4xl mx-auto">
           <iframe
             src={PLUGIN_URL}
             title="Los Amigos de Los Niños Facebook page"
             className="w-full block"
-            style={{ height: 500, border: "none", overflow: "hidden" }}
+            style={{ height: 650, border: "none", overflow: "hidden" }}
             scrolling="no"
             frameBorder="0"
             allow="encrypted-media"
