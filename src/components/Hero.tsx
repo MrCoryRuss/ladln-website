@@ -48,11 +48,11 @@ export default function Hero({ lang }: { lang: Lang }) {
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
           <div className="shrink-0 flex flex-col items-center">
             <Image
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Los Amigos de Los Niños, Mulegé"
               width={180}
               height={180}
-              className="rounded-2xl shadow-md"
+              className=""
               priority
             />
           </div>

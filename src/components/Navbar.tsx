@@ -27,11 +27,11 @@ export default function Navbar({ lang, setLang }: Props) {
         {/* Logo */}
         <Link href="#" className="flex items-center gap-3 group">
           <Image
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Los Amigos de Los Niños, Mulegé"
             width={48}
             height={48}
-            className="rounded-full shrink-0"
+            className="shrink-0"
             priority
           />
           <div className="hidden sm:block leading-tight">
