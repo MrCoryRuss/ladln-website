@@ -1,52 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
 import { Lang, translations } from "@/lib/i18n";
 
 const FB_PAGE = "https://www.facebook.com/ladlnmulege";
-
-declare global {
-  interface Window {
-    FB?: { XFBML: { parse: (element?: HTMLElement) => void } };
-  }
-}
+const FEED_URL =
+  "https://widgets.sociablekit.com/facebook-page-posts/iframe/25712640";
 
 export default function FacebookFeed({ lang }: { lang: Lang }) {
   const t = translations[lang].facebook;
-
-  // Load the Facebook SDK once and render the official Page Plugin timeline.
-  // Switched off the third-party SociableKIT widget on 2026-10-05: its image
-  // CDN started returning 404 for every post photo, so the feed showed text
-  // with broken images. Facebook's own plugin serves the photos itself.
-  useEffect(() => {
-    const parse = () => {
-      window.FB?.XFBML?.parse();
-    };
-
-    if (window.FB?.XFBML) {
-      parse();
-      return;
-    }
-
-    const existing = document.getElementById(
-      "facebook-jssdk",
-    ) as HTMLScriptElement | null;
-    if (existing) {
-      existing.addEventListener("load", parse);
-      return () => existing.removeEventListener("load", parse);
-    }
-
-    const script = document.createElement("script");
-    script.id = "facebook-jssdk";
-    script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0";
-    script.async = true;
-    script.defer = true;
-    script.crossOrigin = "anonymous";
-    script.addEventListener("load", parse);
-    document.body.appendChild(script);
-
-    return () => script.removeEventListener("load", parse);
-  }, []);
 
   return (
     <section id="facebook" className="py-20 bg-stone-50">
@@ -65,26 +26,14 @@ export default function FacebookFeed({ lang }: { lang: Lang }) {
         <p className="text-stone-600 max-w-xl mx-auto mb-8">{t.intro}</p>
 
         <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-4xl mx-auto">
-          <div id="fb-root" />
-          <div
-            className="fb-page"
-            data-href={FB_PAGE}
-            data-tabs="timeline"
-            data-width=""
-            data-height="900"
-            data-small-header="false"
-            data-adapt-container-width="true"
-            data-hide-cover="false"
-            data-show-facepile="false"
-          >
-            <blockquote cite={FB_PAGE} className="fb-xfbml-parse-ignore">
-              <a href={FB_PAGE}>
-                {lang === "en"
-                  ? "Los Amigos de Los Niños, Inc. of Mulegé"
-                  : "Los Amigos de Los Niños, Inc. de Mulegé"}
-              </a>
-            </blockquote>
-          </div>
+          <iframe
+            src={FEED_URL}
+            title="Los Amigos de Los Niños Facebook page"
+            className="w-full block"
+            style={{ width: "100%", height: 1000, border: "none" }}
+            frameBorder="0"
+            loading="lazy"
+          />
         </div>
 
         <div className="mt-6">
