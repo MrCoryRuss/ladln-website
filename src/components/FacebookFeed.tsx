@@ -1,13 +1,24 @@
 "use client";
 
+import { useEffect } from "react";
 import { Lang, translations } from "@/lib/i18n";
 
 const FB_PAGE = "https://www.facebook.com/ladlnmulege";
-const FEED_URL =
-  "https://widgets.sociablekit.com/facebook-page-posts/iframe/25712640";
+const SK_EMBED_ID = "25712640";
+const SK_SCRIPT = "https://widgets.sociablekit.com/facebook-page-posts/widget.js";
 
 export default function FacebookFeed({ lang }: { lang: Lang }) {
   const t = translations[lang].facebook;
+
+  // SociableKIT script embed sizes itself to the content, so the feed is never
+  // clipped at desktop widths the way the old fixed-height (1000px) iframe was.
+  useEffect(() => {
+    if (document.querySelector(`script[src="${SK_SCRIPT}"]`)) return;
+    const s = document.createElement("script");
+    s.src = SK_SCRIPT;
+    s.defer = true;
+    document.body.appendChild(s);
+  }, []);
 
   return (
     <section id="facebook" className="py-20 bg-stone-50">
@@ -25,14 +36,11 @@ export default function FacebookFeed({ lang }: { lang: Lang }) {
         </h2>
         <p className="text-stone-600 max-w-xl mx-auto mb-8">{t.intro}</p>
 
-        <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-4xl mx-auto">
-          <iframe
-            src={FEED_URL}
-            title="Los Amigos de Los Niños Facebook page"
-            className="w-full block"
-            style={{ width: "100%", height: 1000, border: "none" }}
-            frameBorder="0"
-            loading="lazy"
+        <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-4xl mx-auto p-2 text-left">
+          <div
+            className="sk-ww-facebook-page-posts"
+            data-embed-id={SK_EMBED_ID}
+            style={{ minHeight: 400 }}
           />
         </div>
 
