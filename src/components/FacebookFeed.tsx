@@ -4,48 +4,20 @@ import { useEffect } from "react";
 import { Lang, translations } from "@/lib/i18n";
 
 const FB_PAGE = "https://www.facebook.com/ladlnmulege";
-
-declare global {
-  interface Window {
-    FB?: { XFBML: { parse: (element?: HTMLElement) => void } };
-  }
-}
+const SK_EMBED_ID = "25712640";
+const SK_SCRIPT = "https://widgets.sociablekit.com/facebook-page-posts/widget.js";
 
 export default function FacebookFeed({ lang }: { lang: Lang }) {
   const t = translations[lang].facebook;
 
-  // Load the Facebook SDK once and render the official Page Plugin timeline.
-  // Switched off the third-party SociableKIT widget on 2026-10-05: its image
-  // CDN started returning 404 for every post photo, so the feed showed text
-  // with broken images. Facebook's own plugin serves the photos itself.
+  // SociableKIT script embed sizes itself to the content, so the feed is never
+  // clipped at desktop widths the way the old fixed-height (1000px) iframe was.
   useEffect(() => {
-    const parse = () => {
-      window.FB?.XFBML?.parse();
-    };
-
-    if (window.FB?.XFBML) {
-      parse();
-      return;
-    }
-
-    const existing = document.getElementById(
-      "facebook-jssdk",
-    ) as HTMLScriptElement | null;
-    if (existing) {
-      existing.addEventListener("load", parse);
-      return () => existing.removeEventListener("load", parse);
-    }
-
-    const script = document.createElement("script");
-    script.id = "facebook-jssdk";
-    script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0";
-    script.async = true;
-    script.defer = true;
-    script.crossOrigin = "anonymous";
-    script.addEventListener("load", parse);
-    document.body.appendChild(script);
-
-    return () => script.removeEventListener("load", parse);
+    if (document.querySelector(`script[src="${SK_SCRIPT}"]`)) return;
+    const s = document.createElement("script");
+    s.src = SK_SCRIPT;
+    s.defer = true;
+    document.body.appendChild(s);
   }, []);
 
   return (
@@ -64,27 +36,12 @@ export default function FacebookFeed({ lang }: { lang: Lang }) {
         </h2>
         <p className="text-stone-600 max-w-xl mx-auto mb-8">{t.intro}</p>
 
-        <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-4xl mx-auto">
-          <div id="fb-root" />
+        <div className="rounded-2xl overflow-hidden border border-stone-200 shadow-sm bg-white max-w-4xl mx-auto p-2 text-left">
           <div
-            className="fb-page"
-            data-href={FB_PAGE}
-            data-tabs="timeline"
-            data-width=""
-            data-height="900"
-            data-small-header="false"
-            data-adapt-container-width="true"
-            data-hide-cover="false"
-            data-show-facepile="false"
-          >
-            <blockquote cite={FB_PAGE} className="fb-xfbml-parse-ignore">
-              <a href={FB_PAGE}>
-                {lang === "en"
-                  ? "Los Amigos de Los Niños, Inc. of Mulegé"
-                  : "Los Amigos de Los Niños, Inc. de Mulegé"}
-              </a>
-            </blockquote>
-          </div>
+            className="sk-ww-facebook-page-posts"
+            data-embed-id={SK_EMBED_ID}
+            style={{ minHeight: 400 }}
+          />
         </div>
 
         <div className="mt-6">
