@@ -28,9 +28,9 @@ export default function SiteWrapper() {
       <Navbar lang={lang} setLang={setLang} />
       <main>
         <Hero lang={lang} />
+        <Students lang={lang} />
         <FacebookFeed lang={lang} />
         <About lang={lang} />
-        <Students lang={lang} />
         <Donate lang={lang} />
       </main>
       <Footer lang={lang} />
