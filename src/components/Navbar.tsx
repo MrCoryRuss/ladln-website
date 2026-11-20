@@ -57,6 +57,13 @@ export default function Navbar({ lang, setLang }: Props) {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
+          <Link
+            href="/connect"
+            className="hidden md:inline-flex items-center text-sm font-bold px-3 py-2 rounded-full border-2 transition-colors hover:bg-[#253E80] hover:text-white"
+            style={{ borderColor: "#253E80", color: "#253E80" }}
+          >
+            {t.memberLogin}
+          </Link>
           <a
             href="#donate"
             className="hidden md:inline-flex items-center text-white text-sm font-bold px-4 py-2 rounded-full shadow-sm transition-opacity hover:opacity-90"
@@ -89,6 +96,14 @@ export default function Navbar({ lang, setLang }: Props) {
               {l.label}
             </a>
           ))}
+          <Link
+            href="/connect"
+            className="text-center font-bold py-2 rounded-full border-2"
+            style={{ borderColor: "#253E80", color: "#253E80" }}
+            onClick={() => setOpen(false)}
+          >
+            {t.memberLogin}
+          </Link>
           <a
             href="#donate"
             className="mt-1 text-center text-white font-bold py-2 rounded-full"

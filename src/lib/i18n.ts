@@ -12,6 +12,7 @@ export const translations = {
       facebook: "Facebook",
       volunteer: "Volunteer",
       leadership: "Leadership",
+      memberLogin: "Members log on",
     },
     hero: {
       tagline: "Supporting students since 1976",
@@ -271,6 +272,7 @@ export const translations = {
       facebook: "Facebook",
       volunteer: "Voluntariado",
       leadership: "Liderazgo",
+      memberLogin: "Acceso de socios",
     },
     hero: {
       tagline: "Apoyando estudiantes desde 1976",

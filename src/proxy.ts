@@ -5,7 +5,10 @@ import { NextResponse, type NextRequest } from "next/server";
 // the handful of known section paths; this catches everything else and sends it
 // to the home page instead of a blank 404.
 export function proxy(req: NextRequest) {
-  if (req.nextUrl.pathname === "/") return NextResponse.next();
+  const p = req.nextUrl.pathname;
+  // Real routes (and future API endpoints) must not be swallowed by the
+  // catch-all redirect below.
+  if (p === "/" || p.startsWith("/connect")) return NextResponse.next();
 
   const url = req.nextUrl.clone();
   url.pathname = "/";
