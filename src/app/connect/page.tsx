@@ -41,7 +41,8 @@ const COMMUNITIES: Community[] = [
   { id: "nuevo-mulege", en: "Nuevo Mulegé", es: "Nuevo Mulegé" },
   { id: "santispac", en: "Santispac", es: "Santispac" },
   { id: "posada", en: "Posada Concepción", es: "Posada Concepción" },
-  { id: "coyote", en: "Coyote Burrow", es: "Coyote Burrow" },
+  { id: "coyote", en: "Coyote", es: "Coyote" },
+  { id: "burro", en: "Burro", es: "Burro" },
   { id: "cocos", en: "Cocos", es: "Cocos" },
 ];
 
@@ -62,13 +63,14 @@ const SAMPLE_EVENTS: Event[] = [
   { id: "e2", titleEn: "Taco Tuesday + live guitar", titleEs: "Martes de Tacos + guitarra en vivo", dayOffset: 1, time: "5:30 PM", placeEn: "Restaurante El Candil", placeEs: "Restaurante El Candil", category: "food", community: "centro" },
   { id: "e3", titleEn: "Sunset potluck on the beach", titleEs: "Convivencia al atardecer en la playa", dayOffset: 3, time: "4:00 PM", placeEn: "Santispac palapa area", placeEs: "Área de palapas, Santispac", category: "community", community: "santispac" },
   { id: "e4", titleEn: "Live band: Los Dorados", titleEs: "Banda en vivo: Los Dorados", dayOffset: 4, time: "8:00 PM", placeEn: "Posada Concepción", placeEs: "Posada Concepción", category: "food", community: "posada" },
-  { id: "e5", titleEn: "Kayak & paddle meetup", titleEs: "Encuentro de kayak y paddle", dayOffset: 5, time: "7:30 AM", placeEn: "Coyote Burrow launch", placeEs: "Rampa de Coyote Burrow", category: "sports", community: "coyote" },
+  { id: "e5", titleEn: "Kayak & paddle meetup", titleEs: "Encuentro de kayak y paddle", dayOffset: 5, time: "7:30 AM", placeEn: "Coyote beach", placeEs: "Playa Coyote", category: "sports", community: "coyote" },
   { id: "e6", titleEn: "Dorado fishing tournament briefing", titleEs: "Junta del torneo de dorado", dayOffset: 6, time: "6:00 PM", placeEn: "Cocos beach", placeEs: "Playa Cocos", category: "fishing", community: "cocos" },
   { id: "e7", titleEn: "Scholarship student presentation", titleEs: "Presentación de estudiantes becados", dayOffset: 8, time: "6:30 PM", placeEn: "Centro Mulegé", placeEs: "Centro Mulegé", category: "losamigos", community: "centro" },
   { id: "e8", titleEn: "Farmers market & craft fair", titleEs: "Mercado de agricultores y artesanías", dayOffset: 9, time: "9:00 AM", placeEn: "Los Naranjos", placeEs: "Los Naranjos", category: "community", community: "los-naranjos" },
   { id: "e9", titleEn: "Wine tasting night", titleEs: "Noche de degustación de vinos", dayOffset: 11, time: "7:00 PM", placeEn: "Orchard", placeEs: "Orchard", category: "food", community: "orchard" },
   { id: "e10", titleEn: "Community clean-up morning", titleEs: "Mañana de limpieza comunitaria", dayOffset: 12, time: "8:00 AM", placeEn: "Nuevo Mulegé", placeEs: "Nuevo Mulegé", category: "community", community: "nuevo-mulege" },
   { id: "e11", titleEn: "Water aerobics + coffee", titleEs: "Acuaerobics + café", dayOffset: 13, time: "9:00 AM", placeEn: "Oasis", placeEs: "Oasis", category: "sports", community: "oasis" },
+  { id: "e13", titleEn: "Beach bonfire & music at Burro", titleEs: "Fogata y música en Burro", dayOffset: 7, time: "6:00 PM", placeEn: "Burro beach", placeEs: "Playa Burro", category: "community", community: "burro" },
   { id: "e12", titleEn: "Road work notice: highway access", titleEs: "Aviso vial: acceso a la carretera", dayOffset: 3, time: "All day", placeEn: "Mulegé / Highway 1", placeEs: "Mulegé / Carretera 1", category: "news", community: "centro" },
 ];
 
