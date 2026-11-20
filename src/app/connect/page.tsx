@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AskMulege from "@/components/AskMulege";
 import {
   ArrowLeft,
   CalendarDays,
@@ -757,6 +758,8 @@ export default function ConnectPage() {
           </span>
         </div>
       </footer>
+
+      <AskMulege lang={lang} />
     </div>
   );
 }
