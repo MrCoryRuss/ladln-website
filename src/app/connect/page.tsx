@@ -11,7 +11,9 @@ import {
   Copy,
   Mail,
   MapPin,
+  Search,
   Sparkles,
+  Stethoscope,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -31,6 +33,39 @@ const CATEGORIES: Category[] = [
   { id: "sports", en: "Sports & recreation", es: "Deportes y recreación", color: "#6D63C7" },
   { id: "fishing", en: "Fishing & boating", es: "Pesca y navegación", color: "#0E7490" },
   { id: "news", en: "Local announcements", es: "Avisos locales", color: "#B45309" },
+  { id: "health", en: "Health & medical", es: "Salud y médico", color: "#0F766E" },
+];
+
+type Medical = {
+  id: string;
+  nameEn: string;
+  nameEs: string;
+  kindEn: string;
+  kindEs: string;
+  hours: string;
+  phone: string;
+  whereEn: string;
+  whereEs: string;
+  noteEn?: string;
+  noteEs?: string;
+  english?: boolean;
+  urgent?: boolean;
+};
+
+// Sample listings for the wireframe — names are illustrative, phone numbers
+// and hours are placeholders. Nothing here should be treated as verified.
+const MEDICAL: Medical[] = [
+  { id: "m1", nameEn: "Emergency services", nameEs: "Servicios de emergencia", kindEn: "Emergency", kindEs: "Emergencia", hours: "24/7", phone: "911", whereEn: "Nationwide", whereEs: "Todo el país", urgent: true, noteEn: "Police, fire and ambulance", noteEs: "Policía, bomberos y ambulancia" },
+  { id: "m2", nameEn: "Cruz Roja Mexicana — Mulegé", nameEs: "Cruz Roja Mexicana — Mulegé", kindEn: "Ambulance / first aid", kindEs: "Ambulancia / primeros auxilios", hours: "24/7", phone: "615 000 0000", whereEn: "Mulegé", whereEs: "Mulegé", urgent: true, noteEn: "Sample number", noteEs: "Número de ejemplo" },
+  { id: "m3", nameEn: "Centro de Salud Mulegé", nameEs: "Centro de Salud Mulegé", kindEn: "Public clinic", kindEs: "Clínica pública", hours: "Mon–Fri 8:00–15:00", phone: "615 000 0000", whereEn: "Centro Mulegé", whereEs: "Centro Mulegé", noteEn: "Sample hours", noteEs: "Horario de ejemplo" },
+  { id: "m4", nameEn: "General practice — Dr. sample", nameEs: "Medicina general — Dr. ejemplo", kindEn: "Doctor", kindEs: "Médico", hours: "Mon–Sat 9:00–13:00", phone: "615 000 0000", whereEn: "Centro Mulegé", whereEs: "Centro Mulegé", english: true, noteEn: "English spoken", noteEs: "Se habla inglés" },
+  { id: "m5", nameEn: "Dental clinic (sample)", nameEs: "Clínica dental (ejemplo)", kindEn: "Dentist", kindEs: "Dentista", hours: "Mon–Fri 9:00–17:00", phone: "615 000 0000", whereEn: "Centro Mulegé", whereEs: "Centro Mulegé", english: true },
+  { id: "m6", nameEn: "Farmacia del Centro", nameEs: "Farmacia del Centro", kindEn: "Pharmacy", kindEs: "Farmacia", hours: "Daily 8:00–21:00", phone: "615 000 0000", whereEn: "Centro Mulegé", whereEs: "Centro Mulegé" },
+  { id: "m7", nameEn: "Clinical laboratory (sample)", nameEs: "Laboratorio clínico (ejemplo)", kindEn: "Lab / blood work", kindEs: "Laboratorio / análisis", hours: "Mon–Fri 7:00–14:00", phone: "615 000 0000", whereEn: "Centro Mulegé", whereEs: "Centro Mulegé" },
+  { id: "m8", nameEn: "X-ray & ultrasound (sample)", nameEs: "Rayos X y ultrasonido (ejemplo)", kindEn: "Imaging", kindEs: "Imagenología", hours: "Mon–Fri 9:00–16:00", phone: "615 000 0000", whereEn: "Centro Mulegé", whereEs: "Centro Mulegé" },
+  { id: "m9", nameEn: "Physical therapy (sample)", nameEs: "Fisioterapia (ejemplo)", kindEn: "Therapy", kindEs: "Terapia", hours: "Mon–Fri 10:00–18:00", phone: "615 000 0000", whereEn: "Centro Mulegé", whereEs: "Centro Mulegé", english: true },
+  { id: "m10", nameEn: "Air ambulance / medevac", nameEs: "Ambulancia aérea / traslado médico", kindEn: "Emergency transport", kindEs: "Traslado de emergencia", hours: "On call", phone: "615 000 0000", whereEn: "Mulegé → La Paz / Tijuana", whereEs: "Mulegé → La Paz / Tijuana", urgent: true, noteEn: "Arrange through your insurer", noteEs: "Coordinar con su aseguradora" },
+  { id: "m11", nameEn: "Visiting specialists", nameEs: "Especialistas visitantes", kindEn: "Specialist", kindEs: "Especialista", hours: "Monthly — see calendar", phone: "—", whereEn: "Centro Mulegé", whereEs: "Centro Mulegé", english: true, noteEn: "Dates announced in the calendar", noteEs: "Fechas anunciadas en el calendario" },
 ];
 
 const COMMUNITIES: Community[] = [
@@ -70,6 +105,8 @@ const SAMPLE_EVENTS: Event[] = [
   { id: "e9", titleEn: "Wine tasting night", titleEs: "Noche de degustación de vinos", dayOffset: 11, time: "7:00 PM", placeEn: "Orchard", placeEs: "Orchard", category: "food", community: "orchard" },
   { id: "e10", titleEn: "Community clean-up morning", titleEs: "Mañana de limpieza comunitaria", dayOffset: 12, time: "8:00 AM", placeEn: "Nuevo Mulegé", placeEs: "Nuevo Mulegé", category: "community", community: "nuevo-mulege" },
   { id: "e11", titleEn: "Water aerobics + coffee", titleEs: "Acuaerobics + café", dayOffset: 13, time: "9:00 AM", placeEn: "Oasis", placeEs: "Oasis", category: "sports", community: "oasis" },
+  { id: "e14", titleEn: "Blood pressure & glucose clinic", titleEs: "Clínica de presión y glucosa", dayOffset: 4, time: "9:00 AM", placeEn: "Centro de Salud Mulegé", placeEs: "Centro de Salud Mulegé", category: "health", community: "centro" },
+  { id: "e15", titleEn: "Visiting dentist — appointments open", titleEs: "Dentista visitante — citas abiertas", dayOffset: 10, time: "10:00 AM", placeEn: "Centro Mulegé", placeEs: "Centro Mulegé", category: "health", community: "centro" },
   { id: "e13", titleEn: "Beach bonfire & music at Burro", titleEs: "Fogata y música en Burro", dayOffset: 7, time: "6:00 PM", placeEn: "Burro beach", placeEs: "Playa Burro", category: "community", community: "burro" },
   { id: "e12", titleEn: "Road work notice: highway access", titleEs: "Aviso vial: acceso a la carretera", dayOffset: 3, time: "All day", placeEn: "Mulegé / Highway 1", placeEs: "Mulegé / Carretera 1", category: "news", community: "centro" },
 ];
@@ -110,6 +147,18 @@ const COPY = {
     greeting: "Welcome",
     selected: "selected",
     demoBanner: "Wireframe demo — sample data, nothing is saved to a server",
+    tabCalendar: "My calendar",
+    tabMedical: "Medical services",
+    medTitle: "Medical services in Mulegé",
+    medLead:
+      "Clinics, doctors and emergency contacts in one place. Sample listings — names, hours and numbers are placeholders for this demo.",
+    medSearch: "Search clinic, dentist, pharmacy…",
+    medAll: "All",
+    medUrgent: "Emergency",
+    medCall: "Call",
+    medNone: "Nothing matches that search.",
+    medDisclaimer:
+      "In an emergency call 911. This directory is a wireframe and is not medical advice.",
   },
   es: {
     back: "Volver a Los Amigos",
@@ -146,6 +195,18 @@ const COPY = {
     greeting: "Bienvenido",
     selected: "seleccionados",
     demoBanner: "Demostración — datos de ejemplo, nada se guarda en un servidor",
+    tabCalendar: "Mi calendario",
+    tabMedical: "Servicios médicos",
+    medTitle: "Servicios médicos en Mulegé",
+    medLead:
+      "Clínicas, médicos y contactos de emergencia en un solo lugar. Datos de ejemplo — nombres, horarios y teléfonos son ficticios.",
+    medSearch: "Buscar clínica, dentista, farmacia…",
+    medAll: "Todos",
+    medUrgent: "Emergencia",
+    medCall: "Llamar",
+    medNone: "No hay resultados para esa búsqueda.",
+    medDisclaimer:
+      "En una emergencia llame al 911. Este directorio es una demostración y no es consejo médico.",
   },
 } as const;
 
@@ -190,6 +251,9 @@ export default function ConnectPage() {
   const [places, setPlaces] = useState<string[]>(["centro"]);
   const [copied, setCopied] = useState(false);
   const [saved, setSaved] = useState<Saved | null>(null);
+  const [view, setView] = useState<"calendar" | "medical">("calendar");
+  const [q, setQ] = useState("");
+  const [medKind, setMedKind] = useState<string | null>(null);
 
   const t = COPY[lang];
 
@@ -216,6 +280,23 @@ export default function ConnectPage() {
       ).sort((a, b) => a.dayOffset - b.dayOffset),
     [cats, places]
   );
+
+  const medKinds = useMemo(
+    () => Array.from(new Set(MEDICAL.map((m) => m[lang === "es" ? "kindEs" : "kindEn"]))),
+    [lang]
+  );
+
+  const visibleMedical = useMemo(() => {
+    const needle = q.trim().toLowerCase();
+    return MEDICAL.filter((m) => {
+      if (medKind && m[lang === "es" ? "kindEs" : "kindEn"] !== medKind) return false;
+      if (!needle) return true;
+      return [m.nameEn, m.nameEs, m.kindEn, m.kindEs, m.whereEn, m.whereEs]
+        .join(" ")
+        .toLowerCase()
+        .includes(needle);
+    });
+  }, [q, medKind, lang]);
 
   function signIn(method: "facebook" | "email") {
     const who =
@@ -286,6 +367,28 @@ export default function ConnectPage() {
         <p className="text-center text-sm md:text-base font-semibold" style={{ color: "#7A9B33" }}>
           {t.tagline}
         </p>
+
+        {step === "calendar" && (
+          <div className="mt-5 flex justify-center">
+            <div className="inline-flex rounded-full border border-stone-200 bg-white p-1 shadow-sm">
+              {([
+                ["calendar", t.tabCalendar],
+                ["medical", t.tabMedical],
+              ] as const).map(([id, label]) => (
+                <button
+                  key={id}
+                  onClick={() => setView(id)}
+                  className={`rounded-full px-4 py-1.5 text-sm font-bold transition ${
+                    view === id ? "text-white" : "text-stone-600 hover:text-[#253E80]"
+                  }`}
+                  style={view === id ? { backgroundColor: "#253E80" } : undefined}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {step === "signin" && (
           <section className="mt-6">
@@ -408,7 +511,120 @@ export default function ConnectPage() {
           </section>
         )}
 
-        {step === "calendar" && (
+        {step === "calendar" && view === "medical" && (
+          <section className="mt-6">
+            <h1 className="text-2xl md:text-3xl font-extrabold" style={{ color: "#253E80" }}>
+              {t.medTitle}
+            </h1>
+            <p className="mt-2 text-sm text-stone-600">{t.medLead}</p>
+
+            <div className="mt-4 flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-3 py-2">
+              <Search size={15} className="text-stone-400" />
+              <input
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder={t.medSearch}
+                className="w-full bg-transparent text-sm focus:outline-none"
+              />
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              <button
+                onClick={() => setMedKind(null)}
+                className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
+                  medKind === null
+                    ? "border-[#253E80] bg-[#253E80] text-white"
+                    : "border-stone-300 bg-white text-stone-600"
+                }`}
+              >
+                {t.medAll}
+              </button>
+              {medKinds.map((k) => (
+                <button
+                  key={k}
+                  onClick={() => setMedKind(medKind === k ? null : k)}
+                  className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
+                    medKind === k
+                      ? "border-[#0F766E] bg-[#0F766E] text-white"
+                      : "border-stone-300 bg-white text-stone-600"
+                  }`}
+                >
+                  {k}
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-4 space-y-2">
+              {visibleMedical.length === 0 && (
+                <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-8 text-center text-sm text-stone-500">
+                  {t.medNone}
+                </div>
+              )}
+              {visibleMedical.map((m) => (
+                <article
+                  key={m.id}
+                  className="rounded-xl border border-stone-200 bg-white p-3.5 shadow-sm"
+                >
+                  <div className="flex items-start gap-3">
+                    <div
+                      className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${
+                        m.urgent ? "bg-red-50 text-red-600" : "bg-teal-50 text-[#0F766E]"
+                      }`}
+                    >
+                      <Stethoscope size={16} />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                        <h3 className="text-sm font-bold text-stone-800">
+                          {m[lang === "es" ? "nameEs" : "nameEn"]}
+                        </h3>
+                        {m.english && (
+                          <span className="rounded-full bg-stone-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-stone-500">
+                            EN
+                          </span>
+                        )}
+                        {m.urgent && (
+                          <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-red-700">
+                            {t.medUrgent}
+                          </span>
+                        )}
+                      </div>
+                      <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-stone-500">
+                        <span>{m[lang === "es" ? "kindEs" : "kindEn"]}</span>
+                        <span className="inline-flex items-center gap-1">
+                          <Clock size={12} /> {m.hours}
+                        </span>
+                        <span className="inline-flex items-center gap-1">
+                          <MapPin size={12} /> {m[lang === "es" ? "whereEs" : "whereEn"]}
+                        </span>
+                      </div>
+                      {(m.noteEn || m.noteEs) && (
+                        <p className="mt-1 text-[11px] text-stone-400">
+                          {lang === "es" ? m.noteEs : m.noteEn}
+                        </p>
+                      )}
+                    </div>
+                    {m.phone !== "—" && (
+                      <a
+                        href={`tel:${m.phone.replace(/[^0-9+]/g, "")}`}
+                        className="shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-bold text-white"
+                        style={{ backgroundColor: m.urgent ? "#B91C1C" : "#253E80" }}
+                      >
+                        {t.medCall}
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <p className="mt-4 rounded-xl bg-stone-100 p-3 text-[11px] leading-relaxed text-stone-500">
+              {t.medDisclaimer}
+            </p>
+          </section>
+        )}
+
+        {step === "calendar" && view === "calendar" && (
           <section className="mt-6">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <h1 className="text-2xl md:text-3xl font-extrabold" style={{ color: "#253E80" }}>
